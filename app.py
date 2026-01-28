@@ -101,7 +101,7 @@ with tab3:
 
 # --- 模块 4: 倒计时 ---
 with tab4:
-    st.header("⏳ 重要日子倒计时")
+    st.header("⏳ 倒计时")
     target_date = st.date_input("选择日期", datetime.date(2026, 6, 7))
     event_name = st.text_input("事件名称", "重要日子")
     
