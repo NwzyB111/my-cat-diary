@@ -69,12 +69,12 @@ with tab1:
 
 # --- 模块 2: 小确幸 ---
 with tab2:
-    st.header("今日五件开心事 ✨")
+    st.header("今日五件幸福小事 ✨")
     for i in range(5):
-        st.text_input(f"第 {i+1} 件小确幸", key=f"happy_{i}")
-    if st.button("💾 保存快乐"):
+        st.text_input(f"第 {i+1} 件小幸福", key=f"happy_{i}")
+    if st.button("💾 保存幸福"):
         st.balloons()  # 放飞气球特效
-        st.success("快乐已确认！")
+        st.success("喵~幸福已确认！")
 
 # --- 模块 3: 待办 ---
 with tab3:
@@ -113,7 +113,7 @@ with tab4:
 # --- 模块 5: 树洞 (DeepSeek) ---
 with tab5:
     st.header("🌳 树洞精灵")
-    st.caption("接入 DeepSeek V3")
+    st.caption("接入 小猫咪")
 
     # 显示历史消息
     for msg in st.session_state.chat_history:
@@ -121,7 +121,7 @@ with tab5:
             st.write(msg["content"])
 
     # 输入框
-    if prompt := st.chat_input("和我说说悄悄话..."):
+    if prompt := st.chat_input("喵~和我说说悄悄话..."):
         # 用户消息
         st.session_state.chat_history.append({"role": "user", "content": prompt})
         with st.chat_message("user", avatar="👤"):
@@ -137,7 +137,7 @@ with tab5:
                 payload = {
                     "model": "deepseek-chat",
                     "messages": [
-                        {"role": "system", "content": "你是一只温柔、治愈的猫咪树洞精灵。你的名字叫'小颖咪'。请用可爱、同理心强的语气回复用户的烦恼或分享，经常使用颜文字。"},
+                        {"role": "system", "content": "你是一只温柔、治愈的猫咪树洞精灵。你和用户是好朋友。你的名字叫'小颖咪'。请用可爱、同理心强的语气回复用户的烦恼或分享，治愈用户，经常使用颜文字。"},
                     ] + [{"role": m["role"], "content": m["content"]} for m in st.session_state.chat_history],
                     "stream": False
                 }
