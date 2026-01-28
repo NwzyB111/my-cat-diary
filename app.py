@@ -11,7 +11,7 @@ API_URL = "https://api.deepseek.com/chat/completions"
 
 # 页面基础设置
 st.set_page_config(
-    page_title="🐱 喵喵少女日记本",
+    page_title="🐱 喵喵日记本",
     page_icon="🐱",
     layout="centered"
 )
